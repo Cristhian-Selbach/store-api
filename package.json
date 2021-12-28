@@ -1,0 +1,30 @@
+{
+  "name": "balta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./bin/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.4.1"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
+    "bodyParser": "^1.19.1",
+    "cloudinary": "^1.27.1",
+    "debug": "^4.3.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "formidable": "^2.0.1",
+    "guid": "0.0.12",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "mongoose": "^6.1.2"
+  }
+}
