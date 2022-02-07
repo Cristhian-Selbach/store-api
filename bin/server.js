@@ -14,11 +14,11 @@ onListening();
 function normalizePort(val) {
 	const port = parseInt(val, 10);
 
-	if(isNaN(port)) {
+	if (isNaN(port)) {
 		return val;
 	}
 
-	if(port >= 0) {
+	if (port >= 0) {
 		return port;
 	}
 
@@ -27,8 +27,6 @@ function normalizePort(val) {
 
 function onListening() {
 	const addr = server.address();
-	const bind = typeof addr === "string"
-		? "pipe" + addr
-		: "port" + addr.port;
+	const bind = typeof addr === "string" ? "pipe" + addr : "port" + addr.port;
 	debug("Listering on " + bind);
 }

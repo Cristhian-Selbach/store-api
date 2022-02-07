@@ -9,34 +9,36 @@ const schema = new Schema({
 	},
 	number: {
 		type: String,
-		required: true
+		required: true,
 	},
 	createDate: {
 		type: Date,
 		required: true,
-		default: Date.now
+		default: Date.now,
 	},
 	status: {
 		type: String,
 		required: true,
 		enum: ["created", "done"],
-		default: "created"
+		default: "created",
 	},
-	items: [{
-		product: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Product"
+	items: [
+		{
+			product: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Product",
+			},
+			quantity: {
+				type: Number,
+				required: true,
+				default: 1,
+			},
+			price: {
+				type: Number,
+				required: true,
+			},
 		},
-		quantity: {
-			type: Number,
-			required: true,
-			default: 1
-		},
-		price: {
-			type: Number,
-			required: true
-		},
-	}],
+	],
 });
 
 module.exports = mongoose.model("Order", schema);

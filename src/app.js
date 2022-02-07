@@ -16,7 +16,7 @@ const ordersRoute = require("./routes/orders-route");
 const uriDataBase = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}
 @cluster0.eplf9.mongodb.net/BALTA?retryWrites=true&w=majority`;
 
-mongoose.connect(uriDataBase).catch(e => console.log(e));
+mongoose.connect(uriDataBase).catch((e) => console.log(e));
 
 const app = express();
 
@@ -24,8 +24,14 @@ app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-access-token");
-	res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept, x-access-token"
+	);
+	res.header(
+		"Access-Control-Allow-Methods",
+		"GET, POST, PUT, DELETE, OPTIONS"
+	);
 	next();
 });
 
